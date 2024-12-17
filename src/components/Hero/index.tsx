@@ -1,12 +1,6 @@
 import { Container } from '../../globals/globalStyle'
 import Logo from '../Logo'
-import {
-  HeroContainer,
-  HeroHeader,
-  Text,
-  TextContainer,
-  TitleLink
-} from './style'
+import { HeroContainer, Text, TextContainer } from './style'
 
 type Props = {
   title?: string
