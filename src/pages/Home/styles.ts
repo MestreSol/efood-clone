@@ -1,3 +1,6 @@
 import styled from 'styled-components'
+import theme from '../../globals/theme'
 
-const Perfil = styled.div``
+export const HomeContainer = styled.main`
+  background-color: ${theme.Colors.background};
+`
