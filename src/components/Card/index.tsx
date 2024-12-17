@@ -22,8 +22,8 @@ type Props = {
   nameButton: string
   iconName?: string
   rating?: string
-  tagType?: string | undefined
-  tagHighlight?: boolean | undefined
+  tagType?: string
+  tagHighlight?: boolean
   to?: string
   handleClick?: () => void
 }
@@ -42,32 +42,34 @@ const Card = ({
   to,
   handleClick
 }: Props) => {
-  function renderTypeButton(kind: string) {
+  // Function to render the button based on its type
+  function renderTypeButton() {
     return (
       <Button
         kind={kindButton}
         placeholder={nameButton}
-        onClick={kind === 'button' ? handleClick : undefined}
-        to={kind === 'link' ? `${to}` : undefined}
+        onClick={kindButton === 'button' ? handleClick : undefined}
+        to={kindButton === 'link' ? to : undefined}
         displayMode={card === 'primary' ? 'inlineBlock' : 'fullWidth'}
         themeMode={card}
       />
     )
   }
 
-  function renderTags(type: string, highlight: boolean | undefined) {
-    if (type && highlight === true) {
+  // Function to render tags based on type and highlight
+  function renderTags() {
+    if (tagType && tagHighlight) {
       return (
         <ContainerTags>
           <Tag text="Destaque da semana" />
-          <Tag text={type} />
+          {tagType && <Tag text={tagType} />}
         </ContainerTags>
       )
     }
 
     return (
       <ContainerTags>
-        <Tag text={type} />
+        {tagType && <Tag text={tagType} />}
       </ContainerTags>
     )
   }
@@ -90,10 +92,10 @@ const Card = ({
 
         <Text $card={card}>{description}</Text>
 
-        {renderTypeButton(kindButton)}
+        {renderTypeButton()}
       </CardContent>
 
-      {tagType && renderTags(tagType, tagHighlight)}
+      {tagType && renderTags()}
     </CardContainer>
   )
 }
