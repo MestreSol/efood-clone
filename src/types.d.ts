@@ -1,10 +1,16 @@
-
 declare module '*.svg' {
+  const content: string
 
-  const content: string;
+  export default content
+}
 
-  export default content;
-
+declare type MenuProps = {
+  id: number
+  nome: string
+  descricao: string
+  foto: string
+  porcao: string
+  preco: number
 }
 
 declare type RestaurantsDataProps = {
@@ -15,5 +21,5 @@ declare type RestaurantsDataProps = {
   tipo: string
   descricao: string
   capa: string
-  cardapio: MenuDataProps[]
+  cardapio: MenuProps[]
 }
