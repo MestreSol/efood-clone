@@ -9,7 +9,7 @@ export const HeroContainer = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('https://raw.githubusercontent.com/BrunoOliveira16/Curso-Engenheiro-Front-End-EBAC/main/Modulo-35/ImagesEfood/hero.png');
+  background: url('/hero.png');
   background-size: cover;
   background-repeat: no-repeat;
 

@@ -67,11 +67,7 @@ const Card = ({
       )
     }
 
-    return (
-      <ContainerTags>
-        {tagType && <Tag text={tagType} />}
-      </ContainerTags>
-    )
+    return <ContainerTags>{tagType && <Tag text={tagType} />}</ContainerTags>
   }
 
   return (

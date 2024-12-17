@@ -46,9 +46,7 @@ const CardListPerfil = () => {
       </BannerContainer>
 
       <Container>
-        <CardListContainer key="1">
-          {renderProductList(data.cardapio)}
-        </CardListContainer>
+        <CardListContainer key="1"></CardListContainer>
       </Container>
     </ContainerListPerfil>
   )

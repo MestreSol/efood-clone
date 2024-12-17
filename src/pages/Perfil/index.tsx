@@ -1,4 +1,5 @@
 import Hero from '../../components/Hero'
+import CardListPerfil from '../../containers/CardListPerfil'
 import { Container } from './styles'
 
 const Perfil = () => {
