@@ -1,6 +1,6 @@
 import { Container } from '../../globals/globalStyle'
 import Logo from '../Logo'
-import { HeroContainer, Text, TextContainer } from './style'
+import { HeroContainer, Text, TextContainer, HeaderText } from './style'
 
 type Props = {
   title?: string
@@ -11,12 +11,13 @@ const Hero: React.FC<Props> = ({ title, description }) => {
   return (
     <HeroContainer>
       <Container>
-        <Logo kind="link" cover="/logo.png" title="Logo eFood" to="/" />
+        <HeaderText>Restaurantes</HeaderText>
         {description && (
           <TextContainer>
             <Text>{description}</Text>
           </TextContainer>
         )}
+        <Logo kind="link" cover="/logo.png" title="Logo eFood" to="/" />
       </Container>
     </HeroContainer>
   )

@@ -1,4 +1,3 @@
-import Button from '../Button'
 import Tag from '../Tag'
 
 import {
@@ -10,7 +9,8 @@ import {
   CardImage,
   CardContainer,
   ContainerTags,
-  Cover
+  Cover,
+  Button
 } from './style'
 
 type Props = {
@@ -22,7 +22,7 @@ type Props = {
   nameButton: string
   iconName?: string
   rating?: string
-  tagType?: string
+  tagType?: string[]
   tagHighlight?: boolean
   to?: string
   handleClick?: () => void
@@ -62,16 +62,20 @@ const Card = ({
       return (
         <ContainerTags>
           <Tag text="Destaque da semana" />
-          {tagType && <Tag text={tagType} />}
+          {tagType?.map((tag, index) => <Tag key={index} text={tag} />)}
         </ContainerTags>
       )
     }
 
-    return <ContainerTags>{tagType && <Tag text={tagType} />}</ContainerTags>
+    return (
+      <ContainerTags>
+        {tagType?.map((tag, index) => <Tag key={index} text={tag} />)}
+      </ContainerTags>
+    )
   }
 
   return (
-    <CardContainer>
+    <CardContainer $card={card}>
       <CardImage $card={card}>
         <Cover src={cover} alt={cover} />
       </CardImage>

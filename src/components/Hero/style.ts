@@ -78,3 +78,10 @@ export const Text = styled.h2`
     margin-top: 0;
   }
 `
+export const HeaderText = styled.div`
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: ${theme.Colors.text};
+  z-index: 999999;
+`

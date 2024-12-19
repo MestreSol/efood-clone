@@ -3,6 +3,9 @@ import styled from 'styled-components'
 
 export const LogoContainer = styled.div`
   margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
   img {
     width: 125px;

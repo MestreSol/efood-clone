@@ -1,17 +1,24 @@
 import styled from 'styled-components'
 import theme from '../../globals/theme'
+import ButtonComponent from '../Button'
 
 // Define the types for the CardProps
 type CardProps = {
   $card: 'primary' | 'second'
 }
 
+export const Button = styled(ButtonComponent)`
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+`
+
 // Container for the entire card
-export const CardContainer = styled.div`
-  width: 472px;
+export const CardContainer = styled.div<CardProps>`
+  width: ${(props) => (props.$card === 'primary' ? '472px' : '304px')};
   max-width: 100%;
   display: block;
-  position: relative;
+  position: relative; // Certifique-se de que o contêiner do card tenha position: relative
 `
 
 // Container for tags, positioned absolutely within the card
@@ -24,11 +31,11 @@ export const ContainerTags = styled.div`
 
 // Image container with dynamic styles based on the $card prop
 export const CardImage = styled.div<CardProps>`
-  width: 100%;
+  width: ${(props) => (props.$card === 'primary' ? '472px' : '304px')};
+  height: ${(props) => (props.$card === 'primary' ? '217px' : '167px')};
   border: 1px solid transparent;
   background-color: ${(props) =>
     props.$card === 'primary' ? '' : theme.Colors.text};
-  height: ${(props) => (props.$card === 'primary' ? '300px' : '200px')};
   padding: ${(props) => (props.$card === 'primary' ? 0 : '8px 8px 0 8px')};
 `
 
@@ -55,14 +62,15 @@ export const CardHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  margin-top: -2px;
 `
 
 // Title with dynamic color based on the $card prop
 export const Title = styled.h2<CardProps>`
   color: ${(props) =>
     props.$card === 'primary' ? theme.Colors.text : theme.Colors.primary};
-  font-size: 18px;
+  font-size: ${(props) => (props.$card === 'primary' ? '18px' : '16px')};
   font-weight: 700;
 `
 
@@ -74,6 +82,7 @@ export const Text = styled.p<CardProps>`
   font-weight: 400;
   line-height: 22px;
   margin-bottom: 16px;
+  height: 88px;
 `
 
 // Icon with fixed size and margin
