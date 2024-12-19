@@ -8,7 +8,6 @@ export const CardListContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   column-gap: 80px;
   row-gap: 48px;
-
   background-color: ${theme.Colors.background};
 
   @media (max-width: ${theme.breakpoints.tablet}) {
