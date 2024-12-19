@@ -8,6 +8,7 @@ type CardProps = {
 
 // Container for the entire card
 export const CardContainer = styled.div`
+  width: 472px;
   max-width: 100%;
   display: block;
   position: relative;
