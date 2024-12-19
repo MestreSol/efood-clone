@@ -5,7 +5,8 @@ import { Container } from '../../globals/globalStyle'
 
 export const HeroContainer = styled.header`
   width: 100%;
-  padding: 64px 0 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +43,7 @@ export const HeroHeader = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: ${theme.fontSizes.headingM};
+  font-size: ${theme.fontSizes.headingXl};
   font-weight: 900;
   cursor: pointer;
 `
