@@ -1,42 +1,15 @@
 import Card from '../../components/Card'
-import { getDescription, getDescriptionProduct } from '../../utils/ProductUtils'
-import { useState } from 'react'
+import { getDescription } from '../../utils/ProductUtils'
 import {
   BannerContainer,
   CardListContainer,
   ContainerListPerfil,
   SubTitle,
-  TextMessage,
   Title
 } from './style'
-import { data } from 'react-router-dom'
 import { Container } from '../../globals/globalStyle'
-import Star from '../../assets/icons/star.svg'
 
 const CardListPerfil = () => {
-  function renderProductList(products: MenuProps[]) {
-    if (!products) {
-      return (
-        <TextMessage>
-          Não existem ainda produtos para este restaurante
-        </TextMessage>
-      )
-    }
-
-    return products.map((product) => (
-      <Card
-        key={product.id}
-        card="second"
-        kindButton="button"
-        nameButton="Adicionar ao carrinho"
-        title={product.nome}
-        description={getDescriptionProduct(product.descricao)}
-        cover={product.foto}
-        handleClick={() => void 0}
-      />
-    ))
-  }
-
   return (
     <ContainerListPerfil>
       <BannerContainer
@@ -56,8 +29,8 @@ const CardListPerfil = () => {
           <Card
             key="1"
             card="second"
-            kindButton="link"
-            nameButton="Saiba Mais"
+            kindButton="button"
+            nameButton="Adicionar ao carrinho"
             title="Pizza Marguerita"
             description={getDescription(
               'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
@@ -67,8 +40,8 @@ const CardListPerfil = () => {
           <Card
             key="1"
             card="second"
-            kindButton="link"
-            nameButton="Saiba Mais"
+            kindButton="button"
+            nameButton="Adicionar ao carrinho"
             title="Pizza Marguerita"
             description={getDescription(
               'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
@@ -78,8 +51,8 @@ const CardListPerfil = () => {
           <Card
             key="1"
             card="second"
-            kindButton="link"
-            nameButton="Saiba Mais"
+            kindButton="button"
+            nameButton="Adicionar ao carrinho"
             title="Pizza Marguerita"
             description={getDescription(
               'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
@@ -89,8 +62,8 @@ const CardListPerfil = () => {
           <Card
             key="1"
             card="second"
-            kindButton="link"
-            nameButton="Saiba Mais"
+            kindButton="button"
+            nameButton="Adicionar ao carrinho"
             title="Pizza Marguerita"
             description={getDescription(
               'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
@@ -100,8 +73,8 @@ const CardListPerfil = () => {
           <Card
             key="1"
             card="second"
-            kindButton="link"
-            nameButton="Saiba Mais"
+            kindButton="button"
+            nameButton="Adicionar ao carrinho"
             title="Pizza Marguerita"
             description={getDescription(
               'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
@@ -111,8 +84,8 @@ const CardListPerfil = () => {
           <Card
             key="1"
             card="second"
-            kindButton="link"
-            nameButton="Saiba Mais"
+            kindButton="button"
+            nameButton="Adicionar ao carrinho"
             title="Pizza Marguerita"
             description={getDescription(
               'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
