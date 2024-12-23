@@ -5,12 +5,11 @@ import { Container } from '../../globals/globalStyle'
 
 export const HeroContainer = styled.header`
   width: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 64px 0 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('/hero.png');
+  background: url('https://raw.githubusercontent.com/BrunoOliveira16/Curso-Engenheiro-Front-End-EBAC/main/Modulo-35/ImagesEfood/hero.png');
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -43,7 +42,7 @@ export const HeroHeader = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: ${theme.fontSizes.headingXl};
+  font-size: ${theme.fontSizes.headingM};
   font-weight: 900;
   cursor: pointer;
 `
@@ -77,11 +76,4 @@ export const Text = styled.h2`
   @media (max-width: ${theme.breakpoints.mobile}) {
     margin-top: 0;
   }
-`
-export const HeaderText = styled.div`
-  position: absolute;
-  font-size: 18px;
-  font-weight: bold;
-  color: ${theme.Colors.text};
-  z-index: 999999;
 `
