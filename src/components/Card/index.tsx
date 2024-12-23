@@ -77,7 +77,7 @@ const Card = ({
   }
 
   return (
-    <CardContainer $card={card}>
+    <CardContainer>
       <CardImage $card={card}>
         <Cover src={cover} alt={cover} />
       </CardImage>

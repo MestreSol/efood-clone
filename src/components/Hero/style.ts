@@ -42,7 +42,7 @@ export const HeroHeader = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: ${theme.fontSizes.headingM};
+  font-size: ${theme.fontSizes.headingXl};
   font-weight: 900;
   cursor: pointer;
 `

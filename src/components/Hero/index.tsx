@@ -30,9 +30,9 @@ const Hero: React.FC<Props> = ({ textContent, title }) => {
       <HeroHeader>
         <TitleLink to="/">{item}</TitleLink>
         <Logo kind="link" cover="/logo.png" title="Logo eFood" to="/" />
-        <Title onClick={handleOpenCart}>
+        <TitleLink onClick={handleOpenCart} to="#">
           {items.length} produto(s) no carrinho
-        </Title>
+        </TitleLink>
       </HeroHeader>
     )
   }

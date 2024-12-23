@@ -6,9 +6,7 @@ import { HomeContainer } from './styles'
 const Home = () => {
   return (
     <HomeContainer>
-      <Hero
-        description={'Viva experiências gastronômicas no conforto da sua casa'}
-      ></Hero>
+      <Hero textContent="Viva experiências gastronômicas no conforto da sua casa" />
       <Container>
         <CardListHome />
       </Container>
