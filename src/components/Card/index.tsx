@@ -1,3 +1,4 @@
+import Button from '../Button'
 import Tag from '../Tag'
 
 import {
@@ -9,11 +10,10 @@ import {
   CardImage,
   CardContainer,
   ContainerTags,
-  Cover,
-  Button
+  Cover
 } from './style'
 
-type Props = {
+type CardProps = {
   card: 'primary' | 'second'
   kindButton: 'button' | 'link'
   title: string
@@ -22,8 +22,8 @@ type Props = {
   nameButton: string
   iconName?: string
   rating?: string
-  tagType?: string[]
-  tagHighlight?: boolean
+  tagType?: string[] | undefined
+  tagHighlight?: boolean | undefined
   to?: string
   handleClick?: () => void
 }
@@ -41,35 +41,37 @@ const Card = ({
   tagHighlight,
   to,
   handleClick
-}: Props) => {
-  // Function to render the button based on its type
-  function renderTypeButton() {
+}: CardProps) => {
+  function renderTypeButton(kind: string) {
     return (
       <Button
         kind={kindButton}
         placeholder={nameButton}
-        onClick={kindButton === 'button' ? handleClick : undefined}
-        to={kindButton === 'link' ? to : undefined}
+        onClick={kind === 'button' ? handleClick : undefined}
+        to={kind === 'link' ? `${to}` : undefined}
         displayMode={card === 'primary' ? 'inlineBlock' : 'fullWidth'}
         themeMode={card}
       />
     )
   }
 
-  // Function to render tags based on type and highlight
-  function renderTags() {
-    if (tagType && tagHighlight) {
+  function renderTags(type: string[], highlight: boolean | undefined) {
+    if (type && highlight === true) {
       return (
         <ContainerTags>
           <Tag text="Destaque da semana" />
-          {tagType?.map((tag, index) => <Tag key={index} text={tag} />)}
+          {type.map((tag, index) => (
+            <Tag key={index} text={tag} /> // Adicione a propriedade key aqui
+          ))}
         </ContainerTags>
       )
     }
 
     return (
       <ContainerTags>
-        {tagType?.map((tag, index) => <Tag key={index} text={tag} />)}
+        {type.map((tag, index) => (
+          <Tag key={index} text={tag} /> // Adicione a propriedade key aqui
+        ))}
       </ContainerTags>
     )
   }
@@ -92,10 +94,10 @@ const Card = ({
 
         <Text $card={card}>{description}</Text>
 
-        {renderTypeButton()}
+        {renderTypeButton(kindButton)}
       </CardContent>
 
-      {tagType && renderTags()}
+      {tagType && renderTags(tagType, tagHighlight)}
     </CardContainer>
   )
 }
